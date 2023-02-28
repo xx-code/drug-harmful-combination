@@ -18,4 +18,4 @@ Ce projet est associé au cours GLO-7027 offert à l'Université Laval et vise �
 ## Contributor
 
 - Auguste Aka Tiemele ([@xx-code](https://github.com/xx-code))
-- Octave Ekoue Adama ([@xx-code](https://github.com/xx-code))
+- Octave Ekoue Adama ([@OctaveAdama](https://github.com/OctaveAdama))
