@@ -1,9 +1,10 @@
 import numpy as np
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier 
 from sklearn.model_selection import train_test_split
 from utils import load_dataset
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
+from sklearn.feature_selection import SequentialFeatureSelector
 
 
 
@@ -77,3 +78,30 @@ def test(clf, X, y):
     }
 
     return matrix, scores_ensemble
+
+def features_selection(n_tree, criterion, X, y):
+    random_forest = RandomForestClassifier(n_estimators=n_tree, criterion=criterion)
+
+    sfs = SequentialFeatureSelector(random_forest, n_features_to_select='auto')
+    sfs.fit(X, y)
+    
+    list_feature_selected = sfs.get_support()
+
+    new_X = sfs.transform(X)
+
+    return list_feature_selected, new_X
+
+X, y = load_dataset('data/test_sample.csv')
+
+history, final_clf = train(X, y)
+
+print(final_clf)
+
+matrix, score = test(final_clf['classifier'], X, y)
+
+print(matrix)
+print(score)
+
+list_features, X = features_selection(final_clf['n_tree'], final_clf['criterion'], X, y)
+
+print(list_features)
