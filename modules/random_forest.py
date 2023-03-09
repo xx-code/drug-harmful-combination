@@ -1,8 +1,11 @@
 import numpy as np
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier 
 from sklearn.model_selection import train_test_split
 from utils import load_dataset
+from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
+from sklearn.feature_selection import SequentialFeatureSelector
+
 
 
 def train(X, y, criterions=['gini'], n_tree=100, step_n_tree=50):
@@ -54,3 +57,36 @@ def train(X, y, criterions=['gini'], n_tree=100, step_n_tree=50):
         )
 
     return history, clf_final
+
+
+def test(clf, X, y):
+    # error and precision
+    precision = clf.score(X, y)
+    error = 1 - precision
+
+    # other
+    y_pred = clf.predict(X)
+    f1 = f1_score(y, y_pred)
+    accuracy = accuracy_score(y, y_pred)
+    matrix = confusion_matrix(y, y_pred)
+
+    scores_ensemble = {
+        'precision': precision,
+        'error': error,
+        'f1-score': f1,
+        'accuracy': accuracy
+    }
+
+    return matrix, scores_ensemble
+
+def features_selection(n_tree, criterion, X, y):
+    random_forest = RandomForestClassifier(n_estimators=n_tree, criterion=criterion)
+
+    sfs = SequentialFeatureSelector(random_forest, n_features_to_select='auto')
+    sfs.fit(X, y)
+    
+    list_feature_selected = sfs.get_support()
+
+    new_X = sfs.transform(X)
+
+    return list_feature_selected, new_X
