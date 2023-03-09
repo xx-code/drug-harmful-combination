@@ -90,18 +90,3 @@ def features_selection(n_tree, criterion, X, y):
     new_X = sfs.transform(X)
 
     return list_feature_selected, new_X
-
-X, y = load_dataset('data/test_sample.csv')
-
-history, final_clf = train(X, y)
-
-print(final_clf)
-
-matrix, score = test(final_clf['classifier'], X, y)
-
-print(matrix)
-print(score)
-
-list_features, X = features_selection(final_clf['n_tree'], final_clf['criterion'], X, y)
-
-print(list_features)
