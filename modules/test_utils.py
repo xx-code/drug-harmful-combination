@@ -1,4 +1,4 @@
-from utils import load_dataset
+from modules.utils import load_dataset
 
 import numpy as np
 import unittest
