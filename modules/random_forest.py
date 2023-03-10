@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from modules.utils import load_dataset
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
 from sklearn.feature_selection import SequentialFeatureSelector, SelectFromModel
+from tqdm import tqdm
 
 
 
@@ -28,10 +29,13 @@ def train(X, y, criterions=['gini'], n_tree=100, step_n_tree=50):
     train_scores = []
     test_scores = []    
     
-    for clf in clfs:
+    for i, clf in enumerate(clfs):
         clf.fit(X_train, y_train)
         train_scores.append(clf.score(X_train, y_train))
         test_scores.append(clf.score(X_test, y_test))
+        print(f'- Entrainement {i}/{len(clfs)} un terminer')
+
+    print('Entrainement Terminer!!!')
 
     arg_best_score = np.argmax(test_scores)
 
