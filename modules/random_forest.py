@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from utils import load_dataset
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
-from sklearn.feature_selection import SequentialFeatureSelector
+from sklearn.feature_selection import SequentialFeatureSelector, SelectFromModel
 
 
 
@@ -88,5 +88,14 @@ def features_selection(n_tree, criterion, X, y):
     list_feature_selected = sfs.get_support()
 
     new_X = sfs.transform(X)
+
+    return list_feature_selected, new_X
+
+def feature_selection_model(n_tree, criterion, X, y):
+    random_forest = RandomForestClassifier(n_estimators=n_tree, criterion=criterion).fit(X, y)
+    model = SelectFromModel(random_forest, prefit=True)
+
+    new_X = model.transfer(X)
+    list_feature_selected = model.get_support()
 
     return list_feature_selected, new_X
