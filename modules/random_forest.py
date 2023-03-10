@@ -2,7 +2,7 @@ import numpy as np
 
 from sklearn.ensemble import RandomForestClassifier 
 from sklearn.model_selection import train_test_split
-from utils import load_dataset
+from modules.utils import load_dataset
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
 from sklearn.feature_selection import SequentialFeatureSelector, SelectFromModel
 
