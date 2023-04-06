@@ -2,4 +2,8 @@ poly_notduplication.csv
 test_42.csv
 poly_only.csv
 test_42_final.csv
+train_set.csv
+test_set.csv
+random_clf.json
+poly_only_trans.csv
 __pycache__
