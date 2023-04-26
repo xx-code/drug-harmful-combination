@@ -1,0 +1,51 @@
+Selection Par DMI ['Drug_1' 'Drug_4' 'Drug_5' 'Drug_7' 'Drug_11' 'Drug_12' 'Drug_16'
+ 'Drug_17'] == First feature importances
+ 
+precision	error	f1-score	recall	accuracy	roc_auc_score
+0	0.928955	0.234009	0.83303	0.755061	0.765991	0.779148 :matrice confusion after feature importance
+
+treshold: 0.05263157894736842
+Selection Par DPM ['Drug_1' 'Drug_4' 'Drug_5' 'Drug_6' 'Drug_7' 'Drug_9' 'Drug_10' 'Drug_11'
+ 'Drug_12' 'Drug_13' 'Drug_15' 'Drug_16' 'Drug_17' 'Drug_18'] == feature permutation importance
+
+precision	error	f1-score	recall	accuracy	roc_auc_score
+0	0.888155	0.181971	0.88142	0.874785	0.818029	0.7497 == feature permutation importance
+
+
+combi
+{'Drug_18', 'Drug_1', 'Drug_13', 'Drug_15', 'Drug_10', 'Drug_7', 'Drug_11', 'Drug_12', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16', 'Drug_6'}
+precission: 0.8, 4/2 - 10 pres
+
+{'Drug_1', 'Drug_15', 'Drug_10', 'Drug_7', 'Drug_11', 'Drug_12', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16', 'Drug_6', 'Drug_9'}
+precission: 0.8571428571428571, 5/5 - 7 prescription
+
+{'Drug_1', 'Drug_13', 'Drug_15', 'Drug_10', 'Drug_11', 'Drug_12', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16', 'Drug_6'}
+precission: 1.0 3/3, 3-pres
+
+{'Drug_13', 'Drug_15', 'Drug_10', 'Drug_11', 'Drug_12', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16', 'Drug_6'}
+precission: 1.0 2/2, 2-pres
+
+{'Drug_1', 'Drug_10', 'Drug_11', 'Drug_7', 'Drug_17', 'Drug_4', 'Drug_16', 'Drug_6', 'Drug_9'}
+precission: 1.0 1/1, 1-pres
+
+{'Drug_1', 'Drug_15', 'Drug_10', 'Drug_11', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16'}
+precission: 1.0 3/3, 3-pres
+
+{'Drug_1', 'Drug_13', 'Drug_11', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16'}
+precission: 0.875 4/4, 8-pres
+
+{'Drug_1', 'Drug_13', 'Drug_11', 'Drug_17', 'Drug_4', 'Drug_5', 'Drug_16'}
+precission: 0.875 38/8, 70
+
+{'Drug_1', 'Drug_13', 'Drug_17', 'Drug_4', 'Drug_6'}
+precission: 0.78 200 et 125 patient
+
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} & 80\% & 2/4 & 10 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 & 85.7\% & 5/5 & 7 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 & 100\% & 3/3 & 3 \\
+0 0 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 & 100\% & 2/2 & 2 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 0 0 0 \textcolor{red}{1} \textcolor{red}{1} 0 & 100\% & 1/1 & \textcolor{red}{1} \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} 0 0 0 0 \textcolor{red}{1} \textcolor{red}{1} 0 0 0 \textcolor{red}{1} \textcolor{red}{1} \textcolor{red}{1} 0 & 100\% & 3/3 & 3 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} 0 0 0 0 0 \textcolor{red}{1} 0 \textcolor{red}{1} 0 0 \textcolor{red}{1} \textcolor{red}{1} 0 & 87.5\% & 4/4 & 8 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} 0 \textcolor{red}{1} \textcolor{red}{1} 0 0 0 0 0 \textcolor{red}{1} 0 0 0 \textcolor{red}{1} 0 & 87.5\% & 38/8 & 70 \\
+0 \textcolor{red}{1} 0 0 \textcolor{red}{1} 0 \textcolor{red}{1} 0 0 0 0 0 0 \textcolor{red}{1} 0 0 0 \textcolor{red}{1} 0 & 0.78 & 101/23 & 200 \\

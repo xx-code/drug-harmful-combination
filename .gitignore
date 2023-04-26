@@ -6,4 +6,9 @@ train_set.csv
 test_set.csv
 random_clf.json
 poly_only_trans.csv
+tree.dot
+tree.png
+data_poly_only_method_1.csv
+data_poly_only_method_2.csv
+resultat_first_combi_random.csv
 __pycache__

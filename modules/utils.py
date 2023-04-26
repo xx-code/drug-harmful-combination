@@ -20,11 +20,12 @@ def load_dataset(path='', is_order=False):
 
     return X, y
 
-def split_dataset_train_test(test_size, shuffle=False):
+def split_dataset_train_test(test_size, shuffle=False, do_flat=True):
     if os.path.isfile('data/poly_only_trans.csv') and (not os.path.isfile('data/train_set.csv') or not os.path.isfile('data/test_set.csv')) :
         df = pd.read_csv('data/poly_only_trans.csv')
         df = df.drop(['poly', 'timestamp'], axis=1)
-        df[df['hospit'] > 0] = 1
+        if do_flat:
+            df['hospit'][df['hospit'] > 0] = 1
 
         df = df.sort_values(by=['hospit']).reset_index(drop=True)
 
